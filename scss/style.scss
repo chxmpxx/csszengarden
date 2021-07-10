@@ -1,0 +1,115 @@
+$position-center: center;
+$font-stack: Arial, sans-serif;
+$font-h1: 60px;
+$font-h3: 32px;
+$font-p: 20px;
+$color-one: white;
+$color-two: rgb(248,155,191);
+$color-three: rgb(184,181,247);
+$color-four: rgb(250,226,114);
+$color-five: black;
+$shadow-one: black,0 0 20px rgb(248,155,191);
+$padding: 10px 45px 10px 45px;
+
+@mixin theme ($theme-margin: 0 0 -35px 0){
+    background: $color-one;
+    padding: $padding;
+    margin: $theme-margin;
+}
+
+body{
+    background-image: url(img/bg.jpg);
+    background-size: cover;
+    background-position: $position-center;
+}
+
+.page-wrapper{
+    padding: 0 45px 0 45px;
+}
+
+header{
+    font-family: $font-stack;
+    text-align: $position-center;
+    color: $color-one;
+}
+
+h1{
+    font-size: $font-h1;
+    text-shadow: 2px 2px 5px $shadow-one;
+}
+
+h2{
+    margin: -10px;
+    text-shadow: 1px 1px 2px $shadow-one;
+}
+
+h3{
+    font-size: $font-h3;
+}
+
+p{
+    font-size: $font-p;
+}
+
+a:link{
+    color: $color-two;
+}
+
+a:visited{
+    color: $color-three;
+}
+
+a:hover{
+    color: $color-four;
+}
+
+.summary{
+    @include theme($theme-margin: 45px 0 -35px 0);
+}
+
+.preamble{
+    @include theme;
+}
+
+.supporting{
+    @include theme;
+}
+
+footer{
+    margin-top: 45px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: $position-center;
+    text-shadow: 0px 0px 10px $color-one;
+
+    a{
+        background: linear-gradient($color-three, $color-one);
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        padding: $padding;
+        margin: 20px;
+    }
+}
+
+.sidebar{
+    background: $color-one;
+    padding: 30px 45px 10px 45px;
+    margin: 0px 0 -35px 0;
+}
+
+.sidebar li{
+    font-size: $font-p;
+}
+
+.sidebar li a:link{
+    font-size: $font-p;
+	color: $color-five;
+}
+
+.sidebar li a:visited{
+    font-size: $font-p;
+	color: $color-three;
+}
+
+.sidebar li a:hover{
+    color: $color-four;
+}
